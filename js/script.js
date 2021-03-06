@@ -1,6 +1,7 @@
 let input = document.querySelector('.slider')
 let btns = document.querySelectorAll('.btn')
 let img = document.querySelector('img')
+let outText = document.querySelector('span')
 
 let change = 0;
 btns.forEach( el => {
@@ -20,6 +21,7 @@ btns.forEach( el => {
 })
 
 input.addEventListener('input', () => {
+    outText.textContent = `${input.value}%`
     switch (change) {
         case 0 :
             img.style = `filter: blur(${input.value}px);`
